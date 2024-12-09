@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi Orbit Bintang Pleiades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      color: darkblue;
+      margin-top: 20px;
+    }
+    h2 {
+      color: darkgreen;
+      margin-top: 20px;
+    }
+    p {
+      color: #333;
+      font-size: 16px;
+      margin: 10px 20px;
+    }
+    canvas {
+      display: block;
+      margin: 20px auto;
+      background-color: black;
+      border: 1px solid white;
+    }
+    code {
+      background-color: #e8e8e8;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulasi Orbit Bintang Pleiades</h1>
+  <p>
+    Simulasi ini menggunakan metode **Euler-Cromer**, salah satu varian dari metode numerik Euler untuk menghitung pergerakan benda berdasarkan hukum gravitasi Newton. Metode ini memastikan stabilitas orbit dalam waktu panjang.
+  </p>
+  <p>
+    Rumus yang digunakan adalah sebagai berikut:
+  </p>
+  <h2>Rumus dan Metode</h2>
+  <p><strong>1. Gaya Gravitasi</strong>:</p>
+  <p>
+    <code>F = - G * M / r²</code>
+  </p>
+  <p>
+    Di mana:
+    <ul>
+      <li><code>F</code>: Gaya gravitasi</li>
+      <li><code>G</code>: Konstanta gravitasi (dalam satuan arbitrer)</li>
+      <li><code>M</code>: Massa pusat gravitasi</li>
+      <li><code>r</code>: Jarak antara pusat gravitasi dan bintang</li>
+    </ul>
+  </p>
+  <p><strong>2. Akselerasi:</strong></p>
+  <p>
+    <code>a = F / m</code>
+  </p>
+  <p>
+    Dalam simulasi, <code>m</code> adalah massa unit untuk mempermudah perhitungan.
+  </p>
+  <p><strong>3. Posisi dan Kecepatan:</strong></p>
+  <p>
+    Menggunakan metode Euler-Cromer:
+    <ul>
+      <li><code>v(t+Δt) = v(t) + a(t) * Δt</code></li>
+      <li><code>r(t+Δt) = r(t) + v(t+Δt) * Δt</code></li>
+    </ul>
+  </p>
+  <canvas id="orbitCanvas" width="800" height="800"></canvas>
+  <footer>
+    © 2024 Simulasi Orbit - Dibuat menggunakan HTML5 & JavaScript
+  </footer>
+  <script src="simulation.js"></script>
+</body>
+</html>
